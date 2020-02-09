@@ -1,0 +1,79 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>gong.io.sql.params.inspection</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SQL Params Qualifier</name>
+
+  <!-- The version of this plugin -->
+  <version>1.1</version>
+
+  <change-notes>
+    <![CDATA[
+      Added more features to make plugin comprehensive as possible
+      <ul>
+        <li>Reverse checks from sql file to java code</li>
+        <li>Single tenant checks</li>
+        <li>Check all types of sqlSingleStatement && sqlMultipleStatements: sql, sqlNoLogging and statement</li>
+        <li>Check all types of params: param, paramArray and paramNull</li>
+        <li>Ignore commented placeholders in sql files</li>
+      </ul>
+    ]]>
+  </change-notes>
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="173"/>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Sql Params Inspection Tool.<br> Verify sql params have a matching place holder in the respective sql
+      and vice versa.
+    ]]>
+  </description>
+
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://gong.io">Gong IO</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+
+    <!--  Extend the IntelliJ Platform local inspection type, and connect it to the implementation class
+          in this plugin.
+          <localInspection> type element is applied within the scope of a file under edit.
+              It is preferred over <inspectionToolProvider>
+              @see intellij.platform.resources.LangExtensionPoints
+              @see com.intellij.codeInspection.InspectionProfileEntry
+          Attributes:
+            language= Language ID
+            shortName= Not specified, will be computed by the underlying implementation classes.
+            displayName= The string to be shown in the Preferences | Editor | Inspections panel
+                The displayName gets registered to identify this inspection.
+                Can be localized using key= and bundle= attributes instead.
+            groupPath= Defines the outermost grouping for this inspection in
+                the Preferences | Editor | Inspections panel. Not localized.
+            groupBundle= Name of *.bundle file to translate groupKey.
+                In this case reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
+            groupKey= Key to use for translation subgroup name using groupBundle file.
+                In this case reuse the IntelliJ Platform subcategory "Probable bugs"
+            enabledByDefault= Inspection state when Inspections panel is created.
+            level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
+                @see com.intellij.codeHighlighting.HighlightDisplayLevel
+            implementationClass= FQN of inspection implementation
+           -->
+    <localInspection language="JAVA"
+            displayName="Sql param qualifier"
+            groupPath="Java"
+            groupBundle="messages.InspectionsBundle"
+            groupKey="group.names.probable.bugs"
+            enabledByDefault="true"
+            level="ERROR"
+            implementationClass="com.intellij.codeInspection.NonExistingSqlParamInspection"/>
+
+  </extensions>
+
+</idea-plugin>
