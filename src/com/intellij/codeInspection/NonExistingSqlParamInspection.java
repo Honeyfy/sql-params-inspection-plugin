@@ -270,7 +270,9 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
 
                 VirtualFile sqlFile = sourceRootForFile == null ? null : sourceRootForFile
                         .getParent().findFileByRelativePath("resources/" + path);
-                if (sqlFile == null) {
+                if (sqlFile == null || !sqlFile.exists()) {
+                    holder.registerProblem(child,
+                            "Sql file does not exists");
                     return Optional.empty();
                 }
 

@@ -8,7 +8,7 @@
   <name>SQL Params Qualifier</name>
 
   <!-- The version of this plugin -->
-  <version>1.1</version>
+  <version>1.2</version>
 
   <change-notes>
     <![CDATA[
@@ -19,6 +19,7 @@
         <li>Check all types of sqlSingleStatement && sqlMultipleStatements: sql, sqlNoLogging and statement</li>
         <li>Check all types of params: param, paramArray and paramNull</li>
         <li>Ignore commented placeholders in sql files</li>
+        <li>Mark error if sql file does not exists</li>
       </ul>
     ]]>
   </change-notes>
@@ -66,13 +67,13 @@
             implementationClass= FQN of inspection implementation
            -->
     <localInspection language="JAVA"
-            displayName="Sql param qualifier"
-            groupPath="Java"
-            groupBundle="messages.InspectionsBundle"
-            groupKey="group.names.probable.bugs"
-            enabledByDefault="true"
-            level="ERROR"
-            implementationClass="com.intellij.codeInspection.NonExistingSqlParamInspection"/>
+                     displayName="Sql param qualifier"
+                     groupPath="Java"
+                     groupBundle="messages.InspectionsBundle"
+                     groupKey="group.names.probable.bugs"
+                     enabledByDefault="true"
+                     level="ERROR"
+                     implementationClass="com.intellij.codeInspection.NonExistingSqlParamInspection"/>
 
   </extensions>
 

@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/out/out.iml" filepath="$PROJECT_DIR$/out/out.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sql-params-inspection-plugin.iml" filepath="$PROJECT_DIR$/sql-params-inspection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sql-params-inspection-plugin.iml" filepath="$PROJECT_DIR$/sql-params-inspection-plugin.iml" />
     </modules>
   </component>
 </project>
