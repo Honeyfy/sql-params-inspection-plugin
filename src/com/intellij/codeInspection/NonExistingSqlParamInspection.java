@@ -3,6 +3,8 @@ package com.intellij.codeInspection;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectFileIndex;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -13,9 +15,12 @@ import com.intellij.psi.search.ProjectScope;
 import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.IncorrectOperationException;
+import org.apache.commons.lang3.StringUtils;
+import org.assertj.core.util.Sets;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -248,11 +253,14 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
                     }
                 }
                 PsiElement firstChild = callExpression.getFirstChild();
-                return firstChild != null && (firstChild.getText().endsWith("statement") ||
-                        firstChild.getText().endsWith("statements") ||
-                        firstChild.getText().endsWith("sql") ||
-                        firstChild.getText().endsWith("sqls") ||
-                        firstChild.getText().endsWith("sqlNoLogging"));
+                return firstChild != null &&
+                        (firstChild.getText().endsWith("statement") ||
+                                firstChild.getText().endsWith("statements") ||
+                                firstChild.getText().endsWith("sql") ||
+                                firstChild.getText().endsWith("sqls") ||
+                                firstChild.getText().endsWith("sqlNoLogging")) &&
+                        callExpression instanceof PsiMethodCallExpression &&
+                        isValidFilePath((PsiMethodCallExpression) callExpression);
             }
 
             private String toPlaceHolder(String part) {
@@ -264,12 +272,17 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
             private Optional<String> loadSql(PsiMethodCallExpression psiMethodCallExpression) {
                 PsiElement child = psiMethodCallExpression.getArgumentList().getChildren()[1];
                 String path = child.getText().replace("\"", "");
-                ProjectFileIndex instance = ProjectFileIndex.getInstance(child.getProject());
-                VirtualFile sourceRootForFile = instance.getSourceRootForFile(
-                        child.getContainingFile().getVirtualFile());
+                final PsiFile containingFile = child.getContainingFile();
+                final Module module = ModuleUtil.findModuleForFile(containingFile);
+                // First check in main
+                VirtualFile sqlFile = resolveSqlFile(module, containingFile, path, "main");
 
-                VirtualFile sqlFile = sourceRootForFile == null ? null : sourceRootForFile
-                        .getParent().findFileByRelativePath("resources/" + path);
+                // If not found and file belongs to test then check in test folder
+                if (sqlFile == null && containingFile.getVirtualFile().getCanonicalPath().contains("test")) {
+                    sqlFile = resolveSqlFile(module, containingFile, path, "test");
+                }
+
+                // Case both paths not resolved register file does not exists problem
                 if (sqlFile == null || !sqlFile.exists()) {
                     holder.registerProblem(child,
                             "Sql file does not exists");
@@ -296,6 +309,34 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
                 return sb.toString();
             }
         };
+    }
+
+    @Nullable
+    private VirtualFile resolveSqlFile(Module module, PsiFile containingFile, String path, String resourceContainer) {
+        VirtualFile sqlFile = module.getModuleFile().getParent().findFileByRelativePath("src/" + resourceContainer
+                + "/resources/" + path);
+        if (sqlFile == null) {
+            final HashSet<Module> modules = Sets.newHashSet();
+            ModuleUtil.getDependencies(Objects.requireNonNull(ModuleUtil.findModuleForFile(containingFile)), modules);
+            sqlFile = modules.stream()
+                    .map(currentModule -> currentModule.getModuleFile().getParent())
+                    .map(directory -> directory.findFileByRelativePath("src/" + resourceContainer + "/resources/" + path))
+                    .filter(Objects::nonNull)
+                    .findFirst()
+                    .orElse(null);
+        }
+
+        return sqlFile;
+    }
+
+    private boolean isValidFilePath(PsiMethodCallExpression psiMethodCallExpression) {
+        PsiElement child = psiMethodCallExpression.getArgumentList().getChildren()[1];
+        final String text = child.getText();
+        if (!(text.startsWith("\"") || text.endsWith("\""))) {
+            return false;
+        }
+        String path = text.substring(1, text.length() - 1);
+        return path.matches("[^\\\"]+/[^\\/]+$");
     }
 
     private static class RemoveParamQuickFix implements LocalQuickFix {

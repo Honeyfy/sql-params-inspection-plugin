@@ -4,7 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b7a9caa-7eb0-45bf-83a9-680c4cf84f81" name="Default Changelist" comment="" />
+    <list default="true" id="5b7a9caa-7eb0-45bf-83a9-680c4cf84f81" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/intellij/codeInspection/NonExistingSqlParamInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/intellij/codeInspection/NonExistingSqlParamInspection.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,11 +119,26 @@
       <workItem from="1581238320299" duration="24569000" />
       <workItem from="1581268583358" duration="21000" />
       <workItem from="1582019058540" duration="1802000" />
+      <workItem from="1582021834531" duration="119000" />
+      <workItem from="1584696846978" duration="5000" />
+      <workItem from="1584713496215" duration="10000" />
     </task>
+    <task id="LOCAL-00001" summary="new version with missing file sql feature">
+      <created>1582021933148</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582021933148</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new version with missing file sql feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version with missing file sql feature" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Project_Structure" timestamp="1580835358500">
@@ -148,12 +166,20 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="342" y="193" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1581115671008" />
+    <state x="537" y="114" key="CommitChangelistDialog2" timestamp="1582021932599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="537" y="114" key="CommitChangelistDialog2/3840.744.1280.693/1920.122.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582021932599" />
     <state width="894" height="299" key="DebuggerActiveHint" timestamp="1581255454841">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="894" height="299" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1581255454841" />
     <state width="486" height="466" key="DebuggerActiveHint/1920.-286.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1580975034255" />
     <state width="486" height="466" key="DebuggerActiveHint/3840.744.1280.693/1920.122.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581011617101" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1582021913405">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/3840.744.1280.693/1920.122.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582021913405" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1582021707569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,6 +280,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="362" y="82" width="540" height="524" key="StructurePopup/0.0.1280.680@0.0.1280.680" timestamp="1581251985988" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582021935332">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/3840.744.1280.693/1920.122.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582021935332" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581035383457">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -288,7 +318,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/intellij/codeInspection/NonExistingSqlParamInspection.java</url>
-          <line>317</line>
+          <line>358</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
