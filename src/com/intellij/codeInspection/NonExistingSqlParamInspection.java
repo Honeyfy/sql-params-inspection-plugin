@@ -16,7 +16,6 @@ import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.IncorrectOperationException;
 import org.apache.commons.lang3.StringUtils;
-import org.assertj.core.util.Sets;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -316,7 +315,7 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
         VirtualFile sqlFile = module.getModuleFile().getParent().findFileByRelativePath("src/" + resourceContainer
                 + "/resources/" + path);
         if (sqlFile == null) {
-            final HashSet<Module> modules = Sets.newHashSet();
+            final HashSet<Module> modules = new HashSet<>();
             ModuleUtil.getDependencies(Objects.requireNonNull(ModuleUtil.findModuleForFile(containingFile)), modules);
             sqlFile = modules.stream()
                     .map(currentModule -> currentModule.getModuleFile().getParent())

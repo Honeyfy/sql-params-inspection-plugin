@@ -8,12 +8,13 @@
   <name>SQL Params Qualifier</name>
 
   <!-- The version of this plugin -->
-  <version>1.2</version>
+  <version>1.2.1</version>
 
   <change-notes>
     <![CDATA[
       Added more features to make plugin comprehensive as possible
       <ul>
+        <li>Bug fixes around testing file existence</li>
         <li>Reverse checks from sql file to java code</li>
         <li>Single tenant checks</li>
         <li>Check all types of sqlSingleStatement && sqlMultipleStatements: sql, sqlNoLogging and statement</li>
