@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="764f00ee-d044-4d2d-8124-d700032c9b6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
-    </list>
+    <list default="true" id="764f00ee-d044-4d2d-8124-d700032c9b6f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +41,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="sql-params-inspection-plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
@@ -97,6 +104,7 @@
       <workItem from="1590094066986" duration="3490000" />
       <workItem from="1614196554520" duration="28000" />
       <workItem from="1614196588689" duration="47000" />
+      <workItem from="1614196686827" duration="182000" />
     </task>
     <task id="LOCAL‎00001" summary="remove custome intelij Sets package and use simple new HashSet">
       <created>1590097020527</created>
@@ -110,18 +118,44 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove custome intelij Sets package and use simple new HashSet" />
     <option name="LAST_COMMIT_MESSAGE" value="remove custome intelij Sets package and use simple new HashSet" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="461" y="115" key="CommitChangelistDialog2" timestamp="1614192762260">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="115" key="CommitChangelistDialog2/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614192762260" />
-    <state x="184" y="86" key="DiffContextDialog" timestamp="1614192759911">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="86" key="DiffContextDialog/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614192759911" />
   </component>
 </project>
