@@ -21,6 +21,7 @@
         <li>Check all types of params: param, paramArray and paramNull</li>
         <li>Ignore commented placeholders in sql files</li>
         <li>Mark error if sql file does not exists</li>
+        <li>Bug fix, removed redundant intellij custom Sets library (use simple new HashSet)/li>
         <li>Added support for new param methods: paramLongsArray, paramStringsArray, paramEnumNamesArray</li>
       </ul>
     ]]>
