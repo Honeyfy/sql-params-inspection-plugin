@@ -8,7 +8,7 @@
   <name>SQL Params Qualifier</name>
 
   <!-- The version of this plugin -->
-  <version>1.2.2</version>
+  <version>1.2.3</version>
 
   <change-notes>
     <![CDATA[
@@ -22,6 +22,7 @@
         <li>Ignore commented placeholders in sql files</li>
         <li>Mark error if sql file does not exists</li>
         <li>Bug fix, removed redundant intellij custom Sets library (use simple new HashSet)/li>
+        <li>Added support for new param methods: paramLongsArray, paramStringsArray, paramEnumNamesArray</li>
       </ul>
     ]]>
   </change-notes>
