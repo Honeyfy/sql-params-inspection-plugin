@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="764f00ee-d044-4d2d-8124-d700032c9b6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-params-inspection-plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sql-params-inspection-plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/intellij/codeInspection/NonExistingSqlParamInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/intellij/codeInspection/NonExistingSqlParamInspection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,17 +68,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590094064279</updated>
-      <workItem from="1590094066986" duration="2897000" />
+      <workItem from="1590094066986" duration="3490000" />
     </task>
+    <task id="LOCAL‎00001" summary="remove custome intelij Sets package and use simple new HashSet">
+      <created>1590097020527</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1590097020527</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove custome intelij Sets package and use simple new HashSet" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove custome intelij Sets package and use simple new HashSet" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="859" key="DiffContextDialog" timestamp="1590095287925">
+    <state x="461" y="115" key="CommitChangelistDialog2" timestamp="1614192762260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="859" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590095287925" />
+    <state x="461" y="115" key="CommitChangelistDialog2/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614192762260" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1614192759911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="DiffContextDialog/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1614192759911" />
   </component>
 </project>
