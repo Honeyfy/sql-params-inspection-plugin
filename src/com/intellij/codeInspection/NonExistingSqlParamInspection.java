@@ -1,21 +1,19 @@
 package com.intellij.codeInspection;
 
+import com.google.common.collect.ImmutableSet;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ProjectFileIndex;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.java.stubs.JavaLiteralExpressionElementType;
-import com.intellij.psi.impl.source.tree.java.PsiReferenceExpressionImpl;
 import com.intellij.psi.search.ProjectScope;
 import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.util.IncorrectOperationException;
-import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -205,9 +203,17 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
                 }
             }
 
+            private final Set<String> PARAM_METHOD_NAMES = ImmutableSet.of(
+                    "param",
+                    "paramNull",
+                    "paramArray",
+                    "paramLongsArray",
+                    "paramStringsArray",
+                    "paramEnumNamesArray"
+            );
+
             private boolean isParam(PsiElement lastChild) {
-                return lastChild != null && (lastChild.getText().equals("param") ||
-                        lastChild.getText().equals("paramNull") || lastChild.getText().equals("paramArray"));
+                return lastChild != null && PARAM_METHOD_NAMES.contains(lastChild.getText());
             }
 
             private void markMissingPlaceHoldersInParams(PsiElement firstChild, List<String> placeHolders, Set<String> matchedParams) {
