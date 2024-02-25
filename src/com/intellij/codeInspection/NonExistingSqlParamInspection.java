@@ -207,6 +207,7 @@ public class NonExistingSqlParamInspection extends AbstractBaseJavaLocalInspecti
                     "param",
                     "paramNull",
                     "paramArray",
+                    "paramDontLog",
                     "paramLongsArray",
                     "paramStringsArray",
                     "paramEnumNamesArray"
